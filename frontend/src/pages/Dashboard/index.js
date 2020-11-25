@@ -23,6 +23,11 @@ export default function Dashboard(){
         loadSpots();
     }, []);
 
+    function handleLogout(){
+        localStorage.clear();
+
+    }
+
     return (
         <>
             <ul className="spot-list">
@@ -35,8 +40,12 @@ export default function Dashboard(){
                 ))}
             </ul>
 
-            <Link to='/new'>
+            <Link to='/new' >
                 <button className='btn'>Cadastrar novo spot</button>
+            </Link>
+
+            <Link to='/' onClick={handleLogout}>
+                <button className='btnLogout'>Sair</button>
             </Link>
 
             
